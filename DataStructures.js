@@ -196,4 +196,153 @@ function checkInventory(scannedItem) {
 // change code below this line to test different cases:
 console.log(checkInventory("apples"));
 
-//16.
+//16. Use the delete Keyword to Remove Object Properties
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27
+};
+
+// change code below this line
+delete foods.oranges;
+delete foods.plums;
+delete foods.strawberries;
+// change code above this line
+
+console.log(foods);
+
+//17. Check if an object has a property
+let users = {
+  Alan: {
+    age: 27,
+    online: true
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: true
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function isEveryoneHere(obj) {
+  // change code below this line
+  if (
+    obj.hasOwnProperty("Alan") &&
+    obj.hasOwnProperty("Jeff") &&
+    obj.hasOwnProperty("Sarah") &&
+    obj.hasOwnProperty("Ryan")
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+  // change code above this line
+}
+
+console.log(isEveryoneHere(users));
+
+//18. Iterate Through the Keys of an Object with a for...in Statement
+let users = {
+  Alan: {
+    age: 27,
+    online: false
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: false
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function countOnline(obj) {
+  // change code below this line
+  let j=0;
+  for (let user in obj) {
+    console.log(obj[user]);
+    let user = obj[user];
+    if (user.online) {
+    j++
+    console.log(j, user.online);
+    }
+  };
+  return j;
+  // change code above this line
+}
+
+console.log(countOnline(users));
+
+//19. Generate an Array of All Object Keys with Object.keys()
+let users = {
+  Alan: {
+    age: 27,
+    online: false
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: false
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function getArrayOfUsers(obj) {
+  // change code below this line
+  let props = Object.keys(obj);
+  return props;
+  // change code above this line
+}
+
+console.log(getArrayOfUsers(users));
+
+//20. Modify an Array Stored in an Object
+let user = {
+  name: 'Kenneth',
+  age: 28,
+  data: {
+    username: 'kennethCodesAllDay',
+    joinDate: 'March 26, 2016',
+    organization: 'freeCodeCamp',
+    friends: [
+      'Sam',
+      'Kira',
+      'Tomo'
+    ],
+    location: {
+      city: 'San Francisco',
+      state: 'CA',
+      country: 'USA'
+    }
+  }
+};
+
+function addFriend(userObj, friend) {
+  // change code below this line  
+  userObj.data.friends.push(friend);
+  return userObj.data.friends;
+  // change code above this line
+}
+
+console.log(addFriend(user, 'Pete'));
